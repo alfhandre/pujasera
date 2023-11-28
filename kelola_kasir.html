@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kelola Data Kasir</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Kelola Data Kasir</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="kelola_barang.html">Kelola Data Barang</a></li>
+          <li><a href="kelola_tenan.html">Kelola Data Tenan</a></li>
+          <li><a href="tambah_transaksi.html">Tambah Transaksi</a></li>
+          <li><a href="lihat_struk.html">Lihat Struk</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h2>Data Kasir</h2>
+      <!-- Tabel untuk menampilkan data kasir -->
+      <table>
+        <thead>
+          <tr>
+            <th>Kode Kasir</th>
+            <th>Nama Kasir</th>
+            <th>Nomor HP</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Isi tabel disini (dapat diisi dengan data dari database) -->
+        </tbody>
+      </table>
+
+      <h2>Tambah Kasir</h2>
+      <!-- Form untuk menambahkan kasir baru -->
+      <form action="server.php" method="post">
+        <label for="kode_kasir">Kode Kasir:</label>
+        <input type="text" id="kode_kasir" name="kode_kasir" required />
+
+        <label for="nama_kasir">Nama Kasir:</label>
+        <input type="text" id="nama_kasir" name="nama_kasir" required />
+
+        <label for="nomor_hp">Nomor HP:</label>
+        <input type="text" id="nomor_hp" name="nomor_hp" required />
+
+        <button type="submit" name="tambah_kasir">Tambah Kasir</button>
+      </form>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>

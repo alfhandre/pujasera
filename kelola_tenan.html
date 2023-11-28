@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kelola Data Tenan</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Kelola Data Tenan</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="kelola_barang.html">Kelola Data Barang</a></li>
+          <li><a href="kelola_kasir.html">Kelola Data Kasir</a></li>
+          <li><a href="tambah_transaksi.html">Tambah Transaksi</a></li>
+          <li><a href="lihat_struk.html">Lihat Struk</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h2>Data Tenan</h2>
+      <!-- Tabel untuk menampilkan data tenan -->
+      <table>
+        <thead>
+          <tr>
+            <th>Kode Tenan</th>
+            <th>Nama Tenan</th>
+            <th>Nomor HP</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+             <!-- Koneksi ke database (pastikan Anda telah mengonfigurasi koneksi di server.php) -->
+          include 'server.php'; // Query untuk mengambil data tenan $result =
+          $conn->query("SELECT * FROM tenan"); // Periksa apakah query berhasil
+          if ($result) { // Loop untuk menampilkan data tenan dalam tabel while
+          ($row = $result->fetch_assoc()) { echo "
+          <tr>
+            <td>{$row['KodeTenan']}</td>
+            <td>{$row['NamaTenan']}</td>
+            <td>{$row['HP']}</td>
+          </tr>
+          "; } } else { echo "Error: " . $conn->error; } // Tutup koneksi
+          database $conn->close(); ?>
+        </tbody>
+      </table>
+
+      <h2>Tambah Tenan</h2>
+      <!-- Form untuk menambahkan tenan baru -->
+      <form action="server.php" method="post">
+        <label for="kode_tenan">Kode Tenan:</label>
+        <input type="text" id="kode_tenan" name="kode_tenan" required />
+
+        <label for="nama_tenan">Nama Tenan:</label>
+        <input type="text" id="nama_tenan" name="nama_tenan" required />
+
+        <label for="nomor_hp">Nomor HP:</label>
+        <input type="text" id="nomor_hp" name="nomor_hp" required />
+
+        <button type="submit" name="tambah_tenan">Tambah Tenan</button>
+      </form>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>

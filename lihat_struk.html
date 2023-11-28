@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lihat Struk</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Lihat Struk</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="kelola_barang.html">Kelola Data Barang</a></li>
+          <li><a href="kelola_kasir.html">Kelola Data Kasir</a></li>
+          <li><a href="kelola_tenan.html">Kelola Data Tenan</a></li>
+          <li><a href="tambah_transaksi.html">Tambah Transaksi</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h2>Lihat Struk</h2>
+      <!-- Form untuk memasukkan nomor nota dan melihat struk -->
+      <form action="server.php" method="post">
+        <label for="kode_nota">Nomor Nota:</label>
+        <input type="text" id="kode_nota" name="kode_nota" required />
+
+        <button type="submit" name="lihat_struk">Lihat Struk</button>
+      </form>
+
+      <!-- Div untuk menampilkan struk -->
+      <div id="hasil_struk">
+        <!-- Isi struk akan ditampilkan di sini -->
+      </div>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>
